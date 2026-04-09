@@ -22,6 +22,7 @@ class PensionData():
         self.preprocess()
           
     def preprocess(self):
+        self.df = self.df.iloc[:, :22]
         self.df.columns = [
             '자료생성년월', '사업장명', '사업자등록번호', '가입상태', '우편번호',
             '사업장지번상세주소', '주소', '고객법정동주소코드', '고객행정동주소코드', 
