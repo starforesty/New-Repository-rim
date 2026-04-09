@@ -13,6 +13,8 @@ import streamlit as st
 plt.rcParams['font.family'] = "Malgun Gothic"
 plt.rcParams['axes.unicode_minus'] = False
 
+filepath = 'https://drive.google.com/uc?export=download&id=1itux9CgrEj7oJSXIgJZiaXhn4yfdfPYD'
+
 class PensionData():
     def __init__(self, filepath):
         self.df = pd.read_csv(os.path.join(filepath), encoding='cp949')
