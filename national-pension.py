@@ -22,7 +22,6 @@ class PensionData():
         self.preprocess()
           
     def preprocess(self):
-        self.df = self.df.iloc[:, :22]
         self.df.columns = [
             '자료생성년월', '사업장명', '사업자등록번호', '가입상태', '우편번호',
             '사업장지번상세주소', '주소', '고객법정동주소코드', '고객행정동주소코드', 
@@ -74,7 +73,9 @@ class PensionData():
 
 @ st.cache_data    # 웹 서비스가 새로고침 될 때 이 부분 빼고 기능만 돌아감 - 이거 없으면 새로고침 될 때마다 전처리부터 다시 시작
 def read_pensiondata():
-    data = PensionData('https://drive.google.com/uc?export=download&id=1itux9CgrEj7oJSXIgJZiaXhn4yfdfPYD')
+    file_id = '1itux9CgrEj7oJSXIgJZiaXhn4yfdfPYD'
+    direct_link = f'https://drive.google.com/uc?export=download&id={file_id}'
+    data = PensionData(direct_link)
     return data
 
 data = read_pensiondata()
