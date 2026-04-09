@@ -71,7 +71,7 @@ class PensionData():
     def get_data(self):
         return self.df
 
-    # 웹 서비스가 새로고침 될 때 이 부분 빼고 기능만 돌아감 - 이거 없으면 새로고침 될 때마다 전처리부터 다시 시작
+@ st.cache_data    # 웹 서비스가 새로고침 될 때 이 부분 빼고 기능만 돌아감 - 이거 없으면 새로고침 될 때마다 전처리부터 다시 시작
 def read_pensiondata():
     data = PensionData('https://drive.google.com/uc?export=download&id=1itux9CgrEj7oJSXIgJZiaXhn4yfdfPYD')
     return data
