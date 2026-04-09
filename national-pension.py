@@ -73,9 +73,7 @@ class PensionData():
 
 @ st.cache_resource    # 웹 서비스가 새로고침 될 때 이 부분 빼고 기능만 돌아감 - 이거 없으면 새로고침 될 때마다 전처리부터 다시 시작
 def read_pensiondata():
-    file_id = '1itux9CgrEj7oJSXIgJZiaXhn4yfdfPYD'
-    direct_link = f'https://drive.google.com/uc?export=download&id={file_id}'
-    data = PensionData(direct_link)
+    data = https://drive.google.com/uc?export=download&id=1itux9CgrEj7oJSXIgJZiaXhn4yfdfPYD'
     return data
 
 data = read_pensiondata()
